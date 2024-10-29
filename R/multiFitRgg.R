@@ -28,7 +28,7 @@ multiPDF_plot <- function (x, seq_length, distributions) {
   data <- multiPDF_cont(x, seq_length, distributions)
   # create plot with real density
   p <- ggplot2::ggplot(data) +
-    ggplot2::geom_line(aes(x=x_seq, y=dens, color="Real Density"))+
+    ggplot2::geom_line(aes(x=x_seq, y=dens, color="Real Density", linetype = 2))+
     ggplot2::xlab("x")+
     ggplot2::ylab("PDF")+
     ggplot2::labs(title=paste("PDF plot for x over selected distributions"))+
@@ -92,7 +92,7 @@ multiCDF_plot <- function (x, seq_length, distributions) {
   data <- multiCDF_cont(x, seq_length, distributions)
   # create plot with real density
   p <- ggplot2::ggplot(data) +
-    ggplot2::geom_line(aes(x=x_seq, y=dens, color="Real Distribution"))+
+    ggplot2::geom_line(aes(x=x_seq, y=dens, color="Real Distribution", linetype = 2))+
     ggplot2::xlab("x")+
     ggplot2::ylab("CDF")+
     ggplot2::labs(title=paste("CDF plot for x over selected distributions"))+
