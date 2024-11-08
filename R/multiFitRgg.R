@@ -18,11 +18,7 @@ multiPDF_plot <- function (x, seq_length, distributions) {
     distributions <- c("normal",
                        "lognormal",
                        "gamma",
-                       "exponential",
-                       "cauchy",
-                       "t",
-                       "weibull",
-                       "logistic")
+                       "exponential")
   }
   # calculate PDFs
   data <- multiPDF_cont(x, seq_length, distributions)
@@ -47,18 +43,6 @@ multiPDF_plot <- function (x, seq_length, distributions) {
   if ("exponential" %in% distributions == TRUE) {
     p <- p + ggplot2::geom_line(aes(x=x_seq, y=pdf_exponential, color='Exponential'))
   }
-  if ("cauchy" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=pdf_cauchy, color='Cauchy'))
-  }
-  if ("t" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=pdf_t, color='t'))
-  }
-  if ("weibull" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=pdf_weibull, color='Weibull'))
-  }
-  if ("logistic" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=pdf_logistic, color='Loglogistic'))
-  }
   return(p)
 }
 
@@ -82,11 +66,7 @@ multiCDF_plot <- function (x, seq_length, distributions) {
     distributions <- c("normal",
                        "lognormal",
                        "gamma",
-                       "exponential",
-                       "cauchy",
-                       "t",
-                       "weibull",
-                       "logistic")
+                       "exponential")
   }
   # calculate PDFs
   data <- multiCDF_cont(x, seq_length, distributions)
@@ -110,18 +90,6 @@ multiCDF_plot <- function (x, seq_length, distributions) {
   }
   if ("exponential" %in% distributions == TRUE) {
     p <- p + ggplot2::geom_line(aes(x=x_seq, y=cdf_exponential, color='Exponential'))
-  }
-  if ("cauchy" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=cdf_cauchy, color='Cauchy'))
-  }
-  if ("t" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=cdf_t, color='t'))
-  }
-  if ("weibull" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=cdf_weibull, color='Weibull'))
-  }
-  if ("logistic" %in% distributions == TRUE) {
-    p <- p + ggplot2::geom_line(aes(x=x_seq, y=cdf_logistic, color='Loglogistic'))
   }
   return(p)
 }
